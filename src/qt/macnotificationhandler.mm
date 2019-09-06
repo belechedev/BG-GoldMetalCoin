@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.savebitcoin.Vulcoin-Qt";
+        return @"io.savebitcoin.BitcoinInvest-Qt";
     } else {
         return [self __bundleIdentifier];
     }

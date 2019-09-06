@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: vulcoind.service
-Upstart: vulcoind.conf
-OpenRC:  vulcoind.openrc
-         vulcoind.openrcconf
-CentOS:  vulcoind.init
-macOS:    io.savebitcoin.vulcoind.plist
+SystemD: bitcoininvestd.service
+Upstart: bitcoininvestd.conf
+OpenRC:  bitcoininvestd.openrc
+         bitcoininvestd.openrcconf
+CentOS:  bitcoininvestd.init
+macOS:    io.savebitcoin.bitcoininvestd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

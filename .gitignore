@@ -7,12 +7,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/vulcoin
-src/vulcoind
-src/vulcoin-cli
-src/vulcoin-tx
-src/test/test_vulcoin
-src/qt/test/test_vulcoin-qt
+src/bitcoininvest
+src/bitcoininvestd
+src/bitcoininvest-cli
+src/bitcoininvest-tx
+src/test/test_bitcoininvest
+src/qt/test/test_bitcoininvest-qt
 
 # autoreconf
 Makefile.in
@@ -38,8 +38,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/vulcoin-config.h
-src/config/vulcoin-config.h.in
+src/config/bitcoininvest-config.h
+src/config/bitcoininvest-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -64,7 +64,7 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-.vulcoin
+.bitcoininvest
 *.a
 *.pb.cc
 *.pb.h
@@ -84,12 +84,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-vulcoin-qt
-Vulcoin-Qt.app
+bitcoininvest-qt
+BitcoinInvest-Qt.app
 
 # Unit-tests
 Makefile.test
-vulcoin-qt_test
+bitcoininvest-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -105,7 +105,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_vulcoin.coverage/
+test_bitcoininvest.coverage/
 total.coverage/
 coverage_percent.txt
 

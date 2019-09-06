@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2017 The Vulcoin Core developers
+// Copyright (c) 2017-2017 The BitcoinInvest Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,18 +20,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(VLC);
-    unitlist.append(mVLC);
-    unitlist.append(uVLC);
+    unitlist.append(BTV);
+    unitlist.append(mBTV);
+    unitlist.append(uBTV);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case VLC:
-    case mVLC:
-    case uVLC:
+    case BTV:
+    case mBTV:
+    case uBTV:
         return true;
     default:
         return false;
@@ -41,12 +41,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case VLC:
-        return QString("vlc");
-    case mVLC:
-        return QString("mvlc");
-    case uVLC:
-        return QString::fromUtf8("uvlc");
+    case BTV:
+        return QString("btv");
+    case mBTV:
+        return QString("mbtv");
+    case uBTV:
+        return QString::fromUtf8("ubtv");
     default:
         return QString("???");
     }
@@ -56,23 +56,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case VLC:
-            return QString("VLC");
-        case mVLC:
-            return QString("mVLC");
-        case uVLC:
-            return QString::fromUtf8("μVLC");
+        case BTV:
+            return QString("BTV");
+        case mBTV:
+            return QString("mBTV");
+        case uBTV:
+            return QString::fromUtf8("μBTV");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case VLC:
-            return QString("tVLC");
-        case mVLC:
-            return QString("tmVLC");
-        case uVLC:
-            return QString::fromUtf8("tμVLC");
+        case BTV:
+            return QString("tBTV");
+        case mBTV:
+            return QString("tmBTV");
+        case uBTV:
+            return QString::fromUtf8("tμBTV");
         default:
             return QString("???");
         }
@@ -83,23 +83,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case VLC:
-            return QString("VLC");
-        case mVLC:
-            return QString("Milli-VLC (1 / 1" THIN_SP_UTF8 "000)");
-        case uVLC:
-            return QString("Micro-VLC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case BTV:
+            return QString("BTV");
+        case mBTV:
+            return QString("Milli-BTV (1 / 1" THIN_SP_UTF8 "000)");
+        case uBTV:
+            return QString("Micro-BTV (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case VLC:
-            return QString("TestVLCs");
-        case mVLC:
-            return QString("Milli-TestVLC (1 / 1" THIN_SP_UTF8 "000)");
-        case uVLC:
-            return QString("Micro-TestVLC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case BTV:
+            return QString("TestBTVs");
+        case mBTV:
+            return QString("Milli-TestBTV (1 / 1" THIN_SP_UTF8 "000)");
+        case uBTV:
+            return QString("Micro-TestBTV (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -109,11 +109,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case VLC:
+    case BTV:
         return 100000000;
-    case mVLC:
+    case mBTV:
         return 100000;
-    case uVLC:
+    case uBTV:
         return 100;
     default:
         return 100000000;
@@ -123,11 +123,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case VLC:
+    case BTV:
         return 8;
-    case mVLC:
+    case mBTV:
         return 5;
-    case uVLC:
+    case uBTV:
         return 2;
     default:
         return 0;

@@ -10,7 +10,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
-#include "test/test_vulcoin.h"
+#include "test/test_bitcoininvest.h"
 
 #include <string>
 #include <vector>
