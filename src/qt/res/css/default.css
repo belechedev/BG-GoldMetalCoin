@@ -21,11 +21,13 @@
 /****************************************************************************************/
 
 WalletFrame {
-	background-image: url(':/images/walletFrame') no-repeat fixed;
-	background-position: left bottom;
-	border-top: 0px solid #000;
-	margin: 0;
-	padding: 0;
+	border-image: url(':/images/walletFrame') 0 0 0 0 stretch stretch;
+	border-top:0px solid #000;
+	margin:0;
+	padding:0;
+	width: 100%;
+	height: 100%;
+	visibility: inherit;
 }
 
 QStatusBar {
