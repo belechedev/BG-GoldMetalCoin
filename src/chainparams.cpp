@@ -168,11 +168,13 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xe4338d238a16b0d02ebcb3853e9894af75ea4b0fcc5efb35e76255d5a3bafc0e"));
 
         // DNS Seeding
-		//vSeeds.push_back(CDNSSeedData("202.182.114.6", "202.182.114.6"));
-		//vSeeds.push_back(CDNSSeedData("45.77.31.201", "45.77.31.201"));
-		//vSeeds.push_back(CDNSSeedData("202.182.115.47", "202.182.115.47"));
-		//vSeeds.push_back(CDNSSeedData("45.32.8.155", "45.32.8.155"));
-
+		vSeeds.push_back(CDNSSeedData("167.179.70.156", "167.179.70.156"));
+		vSeeds.push_back(CDNSSeedData("45.76.114.104", "45.76.114.104"));
+		vSeeds.push_back(CDNSSeedData("45.77.215.22", "45.77.215.22"));
+		vSeeds.push_back(CDNSSeedData("45.63.57.42", "45.63.57.42"));
+		vSeeds.push_back(CDNSSeedData("45.32.198.46", "45.32.198.46"));
+		vSeeds.push_back(CDNSSeedData("207.148.11.38", "207.148.11.38"));
+		
         // BitcoinInvest addresses start with 'B'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 27);
         // BitcoinInvest script addresses start with '3'
