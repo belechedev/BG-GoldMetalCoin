@@ -117,7 +117,7 @@ public:
         pchMessageStart[1] = 0xdc;
         pchMessageStart[2] = 0x12;
         pchMessageStart[3] = 0xae;
-        vAlertPubKey = ParseHex("04e4349440ace8448dc9d58f380ce0902968e5ec9dcdf073755420e2a5df169061c748eee42a7d1fcfa2df980ef4a5a3b224a10a06356c21c4d960247dac6a4027");
+        vAlertPubKey = ParseHex("04b92f2596be62310afd2d82708db7d641bb359eff4fa510719c9dc95068bda7debe4ef6413c3dda635df3db05dd2e6ffb9bf881073a25372808368e61a2d619fc");
         nDefaultPort = 23850;
         bnProofOfWorkLimit = ~arith_uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
@@ -152,7 +152,7 @@ public:
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0468497757570f1890152a81ddd0c9d7a23cbdc8cf61993b843d481a13d662480236d8fe6bfb9b01c0c9749ae7547caeb18042674449389dde43f18110e9310d9d") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0485216e37e3f0db55ae508ded51fb595e0c194b74a734977b59ad78d881df61beec787db39452ef3f7f63aef593ab45cba149038b494f829803a8b2734895e606") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock.SetNull();
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
@@ -176,7 +176,7 @@ public:
 		//vSeeds.push_back(CDNSSeedData("207.148.11.38", "207.148.11.38"));
 		
         // GoldMetalCoin addresses start with 'B'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 27);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 36);
         // GoldMetalCoin script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
         // GoldMetalCoin private keys start with 'K'
@@ -201,7 +201,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "04ad2f816b87edcbfc3e536764bb887100962826b07dc1eb78576a1f49942c51c9c66aeb3786bf78fc5bea787d753c87a0a4345c0a8b450b550f6c6fc8c5233f35";
+        strSporkKey = "047e7e57bcd46ee1a9d2baf200c9d0fc0447a85aacecd16f6cc12489bb1bbbc4a2d130cce53509dcc4ae1df4711a60086b92df031d051194d9c6ff7ab49f4c25a7";
         strMasternodePoolDummyAddress = "GSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
