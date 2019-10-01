@@ -118,7 +118,7 @@ public:
         pchMessageStart[2] = 0x12;
         pchMessageStart[3] = 0xae;
         vAlertPubKey = ParseHex("04e4349440ace8448dc9d58f380ce0902968e5ec9dcdf073755420e2a5df169061c748eee42a7d1fcfa2df980ef4a5a3b224a10a06356c21c4d960247dac6a4027");
-        nDefaultPort = 23750;
+        nDefaultPort = 23850;
         bnProofOfWorkLimit = ~arith_uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
         nMaxReorganizationDepth = 100;
@@ -318,7 +318,7 @@ public:
         genesis.nNonce = 20542300;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 223750;
+        nDefaultPort = 223850;
         //assert(hashGenesisBlock == uint256S("0x229874aa8a92df3347600978e226ba57bc994b9fa291ea50519afafca2d50ed3"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.

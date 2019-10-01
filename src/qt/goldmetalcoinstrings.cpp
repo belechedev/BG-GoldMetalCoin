@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("goldmetalcoin-core", ""
 QT_TRANSLATE_NOOP("goldmetalcoin-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("goldmetalcoin-core", "(23750 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("goldmetalcoin-core", "(23850 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("goldmetalcoin-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("goldmetalcoin-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("goldmetalcoin-core", "(must be 23750 for mainnet)"),
+QT_TRANSLATE_NOOP("goldmetalcoin-core", "(must be 23850 for mainnet)"),
 QT_TRANSLATE_NOOP("goldmetalcoin-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("goldmetalcoin-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("goldmetalcoin-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),

@@ -5238,8 +5238,8 @@ for example: alertnotify=echo %%s | mail -s &quot;GoldMetalCoin Alert&quot; admi
     </message>
     <message>
         <location line="+3"/>
-        <source>(23750 could be used only on mainnet)</source>
-        <translation type="unfinished">(23750 could be used only on mainnet)</translation>
+        <source>(23850 could be used only on mainnet)</source>
+        <translation type="unfinished">(23850 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5253,7 +5253,7 @@ for example: alertnotify=echo %%s | mail -s &quot;GoldMetalCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 23750 for mainnet)</source>
+        <source>(must be 23850 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
