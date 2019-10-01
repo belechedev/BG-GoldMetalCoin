@@ -13,7 +13,7 @@
 #include "wallet_ismine.h"
 #endif
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <vector>
 

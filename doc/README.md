@@ -1,36 +1,36 @@
-BitcoinInvest Core
+GoldMetalCoin Core
 ==================
 
 Setup
 ---------------------
-[BitcoinInvest Core](http://btv.org) is the original BitcoinInvest client and it builds the backbone of the network. However, it downloads and stores the entire history of BitcoinInvest transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[GoldMetalCoin Core](http://gmc.org) is the original GoldMetalCoin client and it builds the backbone of the network. However, it downloads and stores the entire history of GoldMetalCoin transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run BitcoinInvest Core on your native platform.
+The following are some helpful notes on how to run GoldMetalCoin Core on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/bitcoininvest-qt` (GUI) or
-- `bin/bitcoininvestd` (headless)
+- `bin/goldmetalcoin-qt` (GUI) or
+- `bin/goldmetalcoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run bitcoininvest-qt.exe.
+Unpack the files into a directory, and then run goldmetalcoin-qt.exe.
 
 ### macOS
 
-Drag BitcoinInvest-Qt to your applications folder, and then run BitcoinInvest-Qt.
+Drag GoldMetalCoin-Qt to your applications folder, and then run GoldMetalCoin-Qt.
 
 ### Need Help?
 
-* Join our Discord server [Discord Server](https://discord.btv.org)
+* Join our Discord server [Discord Server](https://discord.gmc.org)
 
 Building
 ---------------------
-The following are developer notes on how to build BitcoinInvest Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build GoldMetalCoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [macOS Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -38,7 +38,7 @@ The following are developer notes on how to build BitcoinInvest Core on your nat
 
 Development
 ---------------------
-The BitcoinInvest repo's [root README](https://github.com/bitcoininvest-official/bitcoininvest/blob/master/README.md) contains relevant information on the development process and automated testing.
+The GoldMetalCoin repo's [root README](https://github.com/goldmetalcoin-official/goldmetalcoin/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2017 The BitcoinInvest Core developers
+// Copyright (c) 2017-2017 The GoldMetalCoin Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,18 +20,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(BTV);
-    unitlist.append(mBTV);
-    unitlist.append(uBTV);
+    unitlist.append(GMC);
+    unitlist.append(mGMC);
+    unitlist.append(uGMC);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case BTV:
-    case mBTV:
-    case uBTV:
+    case GMC:
+    case mGMC:
+    case uGMC:
         return true;
     default:
         return false;
@@ -41,12 +41,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case BTV:
-        return QString("btv");
-    case mBTV:
-        return QString("mbtv");
-    case uBTV:
-        return QString::fromUtf8("ubtv");
+    case GMC:
+        return QString("gmc");
+    case mGMC:
+        return QString("mgmc");
+    case uGMC:
+        return QString::fromUtf8("ugmc");
     default:
         return QString("???");
     }
@@ -56,23 +56,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case BTV:
-            return QString("BTV");
-        case mBTV:
-            return QString("mBTV");
-        case uBTV:
-            return QString::fromUtf8("μBTV");
+        case GMC:
+            return QString("GMC");
+        case mGMC:
+            return QString("mGMC");
+        case uGMC:
+            return QString::fromUtf8("μGMC");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case BTV:
-            return QString("tBTV");
-        case mBTV:
-            return QString("tmBTV");
-        case uBTV:
-            return QString::fromUtf8("tμBTV");
+        case GMC:
+            return QString("tGMC");
+        case mGMC:
+            return QString("tmGMC");
+        case uGMC:
+            return QString::fromUtf8("tμGMC");
         default:
             return QString("???");
         }
@@ -83,23 +83,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case BTV:
-            return QString("BTV");
-        case mBTV:
-            return QString("Milli-BTV (1 / 1" THIN_SP_UTF8 "000)");
-        case uBTV:
-            return QString("Micro-BTV (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case GMC:
+            return QString("GMC");
+        case mGMC:
+            return QString("Milli-GMC (1 / 1" THIN_SP_UTF8 "000)");
+        case uGMC:
+            return QString("Micro-GMC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case BTV:
-            return QString("TestBTVs");
-        case mBTV:
-            return QString("Milli-TestBTV (1 / 1" THIN_SP_UTF8 "000)");
-        case uBTV:
-            return QString("Micro-TestBTV (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case GMC:
+            return QString("TestGMCs");
+        case mGMC:
+            return QString("Milli-TestGMC (1 / 1" THIN_SP_UTF8 "000)");
+        case uGMC:
+            return QString("Micro-TestGMC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -109,11 +109,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case BTV:
+    case GMC:
         return 100000000;
-    case mBTV:
+    case mGMC:
         return 100000;
-    case uBTV:
+    case uGMC:
         return 100;
     default:
         return 100000000;
@@ -123,11 +123,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case BTV:
+    case GMC:
         return 8;
-    case mBTV:
+    case mGMC:
         return 5;
-    case uBTV:
+    case uGMC:
         return 2;
     default:
         return 0;

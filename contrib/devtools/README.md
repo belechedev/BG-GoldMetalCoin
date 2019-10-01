@@ -18,7 +18,7 @@ For example:
   ./github-merge.py 3077
 
 (in any git repository) will help you merge pull request #3077 for the
-bitcoininvest/bitcoininvest repository.
+goldmetalcoin/goldmetalcoin repository.
 
 What it does:
 * Fetch master and the pull request.
@@ -42,16 +42,16 @@ This requires help2man which can be found at: https://www.gnu.org/software/help2
 
 Setup
 ---------
-Configuring the github-merge tool for the BitcoinInvest repository is done in the following way:
+Configuring the github-merge tool for the GoldMetalCoin repository is done in the following way:
 
-    git config githubmerge.repository bitcoininvest/bitcoininvest
+    git config githubmerge.repository goldmetalcoin/goldmetalcoin
     git config githubmerge.testcmd "make -j4 check" (adapt to whatever you want to use for testing)
     git config --global user.signingkey mykeyid (if you want to GPG sign)
 
 optimize-pngs.py
 ================
 
-A script to optimize png files in the BitcoinInvest
+A script to optimize png files in the GoldMetalCoin
 repository (requires pngcrush).
 
 fix-copyright-headers.py
@@ -99,10 +99,10 @@ If only supported symbols are used the return value will be 0 and the output wil
 
 If there are 'unsupported' symbols, the return value will be 1 a list like this will be printed:
 
-    .../64/test_bitcoininvest: symbol memcpy from unsupported version GLIBC_2.14
-    .../64/test_bitcoininvest: symbol __fdelt_chk from unsupported version GLIBC_2.15
-    .../64/test_bitcoininvest: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
-    .../64/test_bitcoininvest: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
+    .../64/test_goldmetalcoin: symbol memcpy from unsupported version GLIBC_2.14
+    .../64/test_goldmetalcoin: symbol __fdelt_chk from unsupported version GLIBC_2.15
+    .../64/test_goldmetalcoin: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
+    .../64/test_goldmetalcoin: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
 
 update-translations.py
 ======================

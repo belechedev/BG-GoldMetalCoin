@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between bitcoininvest-cli and bitcoininvestd)
- * of a given instance of the BitcoinInvest system.
+ * CBaseChainParams defines the base parameters (shared between goldmetalcoin-cli and goldmetalcoind)
+ * of a given instance of the GoldMetalCoin system.
  */
 class CBaseChainParams
 {

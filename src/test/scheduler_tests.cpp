@@ -5,12 +5,12 @@
 #include "random.h"
 #include "scheduler.h"
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoininvest-config.h"
+#include "config/goldmetalcoin-config.h"
 #else
 #define HAVE_WORKING_BOOST_SLEEP_FOR
 #endif
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <boost/bind.hpp>
 #include <boost/random/mersenne_twister.hpp>

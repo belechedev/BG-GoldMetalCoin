@@ -4,7 +4,7 @@
 There are many ways to setup a wallet to support start-many. This guide will walk through two of them.
 
 1. [Importing an existing wallet (recommended if you are consolidating wallets).](#option1)
-2. [Sending 1,000 BitcoinInvest to new wallet addresses.](#option2)
+2. [Sending 1,000 GoldMetalCoin to new wallet addresses.](#option2)
 
 ## <a name="option1"></a>Option 1. Importing an existing wallet
 
@@ -56,9 +56,9 @@ Create a new wallet address for each MasterNode.
 
 Close your QT Wallet.
 
-### Send 1,000 BTV to New Addresses
+### Send 1,000 GMC to New Addresses
 
-Just like setting up a standard MN. Send exactly 1,000 BTV to each new address created above.
+Just like setting up a standard MN. Send exactly 1,000 GMC to each new address created above.
 
 ### Create New Masternode Private Keys
 
@@ -78,11 +78,11 @@ Remember... this is local. Make sure your QT is not running.
 
 Create the masternode.conf file in the same directory as your wallet.dat.
 
-Copy the masternode private key and correspondig collateral output transaction that holds the 2,500 BTV.
+Copy the masternode private key and correspondig collateral output transaction that holds the 2,500 GMC.
 
 The masternode private key may be an existing key from [Option 1](#option1), or a newly generated key from [Option 2](#option2).
 
-*Please note, the masternode private key is not the same as a wallet private key. Never put your wallet private key in the masternode.conf file. That is equivalent to putting your 1,000 BTV on the remote server and defeats the purpose of a hot/cold setup.*
+*Please note, the masternode private key is not the same as a wallet private key. Never put your wallet private key in the masternode.conf file. That is equivalent to putting your 1,000 GMC on the remote server and defeats the purpose of a hot/cold setup.*
 
 ### Get the collateral output
 
@@ -95,7 +95,7 @@ Issue the following:
 Make note of the hash (which is your collaterla_output) and index.
 
 ### Enter your MasterNode details into your masternode.conf file
-[From the bitcoininvest github repo](https://github.com/bitcoininvest-official/bitcoininvest/blob/master/doc/masternode_conf.md)
+[From the goldmetalcoin github repo](https://github.com/goldmetalcoin-official/goldmetalcoin/blob/master/doc/masternode_conf.md)
 
 The new masternode.conf format consists of a space seperated text file. Each line consisting of an alias, IP address followed by port, masternode private key, collateral output transaction id and collateral output index, donation address and donation percentage (the latter two are optional and should be in format "address:percentage").
 
@@ -112,20 +112,20 @@ mn01 127.0.0.1:23750 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c8
 mn02 127.0.0.2:23750 93WaAb3htPJEV8E9aQcN23Jt97bPex7YvWfgMDTUdWJvzmrMqey aa9f1034d973377a5e733272c3d0eced1de22555ad45d6b24abadff8087948d4 0 7gnwGHt17heGpG9Crfeh4KGpYNFugPhJdh:25
 ```
 
-## What about the bitcoininvest.conf file?
+## What about the goldmetalcoin.conf file?
 
-If you are using a masternode.conf file you no longer need the bitcoininvest.conf file. The exception is if you need custom settings (thanks oblox).
+If you are using a masternode.conf file you no longer need the goldmetalcoin.conf file. The exception is if you need custom settings (thanks oblox).
 
-## Update bitcoininvest.conf on server
+## Update goldmetalcoin.conf on server
 
-If you generated a new masternode private key, you will need to update the remote bitcoininvest.conf files.
+If you generated a new masternode private key, you will need to update the remote goldmetalcoin.conf files.
 
 Shut down the daemon and then edit the file.
 
-```sudo nano .bitcoininvest/bitcoininvest.conf```
+```sudo nano .goldmetalcoin/goldmetalcoin.conf```
 
 ### Edit the masternodeprivkey
-If you generated a new masternode private key, you will need to update the masternodeprivkey value in your remote bitcoininvest.conf file.
+If you generated a new masternode private key, you will need to update the masternodeprivkey value in your remote goldmetalcoin.conf file.
 
 ## Start your MasterNodes
 
@@ -135,9 +135,9 @@ If your remote server is not running, start your remote daemon as you normally w
 
 I usually confirm that remote is on the correct block by issuing:
 
-```bitcoininvestd getinfo```
+```goldmetalcoind getinfo```
 
-And compare with the official explorer at http://explorer.btv.org
+And compare with the official explorer at http://explorer.gmc.org
 
 ### Local
 

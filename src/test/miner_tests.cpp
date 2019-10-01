@@ -9,7 +9,7 @@
 #include "uint256.h"
 #include "util.h"
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven BitcoinInvest tests.
+Utilities to generate test vectors for the data-driven GoldMetalCoin tests.
 
 Usage:
 

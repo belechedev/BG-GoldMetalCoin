@@ -1,15 +1,15 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
 
-BitcoinInvest Core version *version* is now available from:
+GoldMetalCoin Core version *version* is now available from:
 
-  <https://github.com/bitcoininvest-official/bitcoininvest/releases>
+  <https://github.com/goldmetalcoin-official/goldmetalcoin/releases>
 
 This is a new major version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/bitcoininvest-official/bitcoininvest/issues>
+  <https://github.com/goldmetalcoin-official/goldmetalcoin/issues>
 
 Mandatory Update
 ==============
@@ -18,15 +18,15 @@ Mandatory Update
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/BitcoinInvest-Qt (on Mac) or bitcoininvestd/bitcoininvest-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/GoldMetalCoin-Qt (on Mac) or goldmetalcoind/goldmetalcoin-qt (on Linux).
 
 Compatibility
 ==============
 
-BitcoinInvest Core is extensively tested on multiple operating systems using
+GoldMetalCoin Core is extensively tested on multiple operating systems using
 Linux, macOS 10.10+, and Windows 7 and later.
 
-BitcoinInvest Core should also work on most other Unix-like systems but is not
+GoldMetalCoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable Changes
@@ -45,7 +45,7 @@ overridden with the option `-rpccookiefile`.
 This is similar to Tor's CookieAuthentication: see
 https://www.torproject.org/docs/tor-manual.html.en
 
-This allows running bitcoininvestd without having to do any manual configuration.
+This allows running goldmetalcoind without having to do any manual configuration.
 
 
 *version* Change log

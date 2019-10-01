@@ -1,7 +1,7 @@
 // Copyright (c) 2012-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The BitcoinInvest Core developers
+// Copyright (c) 2019-2019 The GoldMetalCoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,17 +12,17 @@
  * network protocol versioning
  */
 
-static const int PROTOCOL_VERSION = 70931;
+static const int PROTOCOL_VERSION = 72000;
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 209;
 
 //! In this version, 'getheaders' was introduced.
-static const int GETHEADERS_VERSION = 70931;
+static const int GETHEADERS_VERSION = 72000;
 
 //! disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION = 70931;
-static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 70931;
+static const int MIN_PEER_PROTO_VERSION = 72000;
+static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 72000;
 
 //! fork blocks
 static const int SOFT_FORK_VERSION_120 = 260000;
@@ -41,6 +41,6 @@ static const int MEMPOOL_GD_VERSION = 60002;
 static const int NO_BLOOM_VERSION = 70005;
 
 //! Community proposal starts with this version
-static const int COMMUNITY_PROPOSAL_VERSION = 70931;
+static const int COMMUNITY_PROPOSAL_VERSION = 72000;
 
 #endif // BITCOIN_VERSION_H

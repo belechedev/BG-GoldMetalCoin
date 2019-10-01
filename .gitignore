@@ -7,12 +7,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/bitcoininvest
-src/bitcoininvestd
-src/bitcoininvest-cli
-src/bitcoininvest-tx
-src/test/test_bitcoininvest
-src/qt/test/test_bitcoininvest-qt
+src/goldmetalcoin
+src/goldmetalcoind
+src/goldmetalcoin-cli
+src/goldmetalcoin-tx
+src/test/test_goldmetalcoin
+src/qt/test/test_goldmetalcoin-qt
 
 # autoreconf
 Makefile.in
@@ -38,8 +38,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/bitcoininvest-config.h
-src/config/bitcoininvest-config.h.in
+src/config/goldmetalcoin-config.h
+src/config/goldmetalcoin-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -64,7 +64,7 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-.bitcoininvest
+.goldmetalcoin
 *.a
 *.pb.cc
 *.pb.h
@@ -84,12 +84,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-bitcoininvest-qt
-BitcoinInvest-Qt.app
+goldmetalcoin-qt
+GoldMetalCoin-Qt.app
 
 # Unit-tests
 Makefile.test
-bitcoininvest-qt_test
+goldmetalcoin-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -105,7 +105,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_bitcoininvest.coverage/
+test_goldmetalcoin.coverage/
 total.coverage/
 coverage_percent.txt
 

@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package bitcoininvestd/bitcoininvest-qt
-for Debian-based Linux systems. If you compile bitcoininvestd/bitcoininvest-qt yourself, there are some useful files here.
+This directory contains files used to package goldmetalcoind/goldmetalcoin-qt
+for Debian-based Linux systems. If you compile goldmetalcoind/goldmetalcoin-qt yourself, there are some useful files here.
 
-## bitcoininvest: URI support ##
+## goldmetalcoin: URI support ##
 
 
-bitcoininvest-qt.desktop  (Gnome / Open Desktop)
+goldmetalcoin-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install bitcoininvest-qt.desktop
+	sudo desktop-file-install goldmetalcoin-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your bitcoininvestqt binary to `/usr/bin`
-and the `../../share/pixmaps/bitcoininvest128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your goldmetalcoinqt binary to `/usr/bin`
+and the `../../share/pixmaps/goldmetalcoin128.png` to `/usr/share/pixmaps`
 
-bitcoininvest-qt.protocol (KDE)
+goldmetalcoin-qt.protocol (KDE)
 

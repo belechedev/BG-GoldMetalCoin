@@ -1,5 +1,5 @@
 ---
-name: "bitcoininvest-dmg-signer"
+name: "goldmetalcoin-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/bitcoininvest-official/bitcoininvest-detached-sigs.git"
+- "url": "https://github.com/goldmetalcoin-official/goldmetalcoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "bitcoininvest-osx-unsigned.tar.gz"
+- "goldmetalcoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=bitcoininvest-osx-unsigned.tar.gz
-  SIGNED=bitcoininvest-osx-signed.dmg
+  UNSIGNED=goldmetalcoin-osx-unsigned.tar.gz
+  SIGNED=goldmetalcoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

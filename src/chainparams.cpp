@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The BitcoinInvest Core developers
+// Copyright (c) 2019-2019 The GoldMetalCoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -53,11 +53,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0,      uint256("0x00000562335393193cf0d47636bd533499833cf243048f059d2bbf21edf821c8"));
+    (0,      uint256("0x"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1566478596, // * UNIX timestamp of last checkpoint block
+    1569890846, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -126,14 +126,14 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 2 * 60; // BitcoinInvest: 1 day
-        nTargetSpacing = 2 * 60;  // BitcoinInvest: 2 minutes
+        nTargetTimespan = 3 * 60; // GoldMetalCoin: 3 minutes
+        nTargetSpacing = 40 * 60;  // GoldMetalCoin: 40 minutes
         nMaturity = 20;
         nMasternodeCountDrift = 20;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 500;
-        nModifierUpdateBlock = 1; // we use the version 2 for BTV
+        nModifierUpdateBlock = 1; // we use the version 3 for GMC
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -146,7 +146,7 @@ public:
 		 Hash: 00000562335393193cf0d47636bd533499833cf243048f059d2bbf21edf821c8
 		 POW: 00000ffff0000000000000000000000000000000000000000000000000000000
          */
-        const char* pszTimestamp = "The BitcoinInvest is the best for your money 21/08/2019 for your life";
+        const char* pszTimestamp = "The GoldMetalCoin makes your money pay off with low energy cost!";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -157,35 +157,35 @@ public:
         genesis.hashPrevBlock.SetNull();
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1566478596;
+        genesis.nTime = 1569890846;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 297847;
+        genesis.nNonce = 0;
 		
-		//MineGenesis(genesis, bnProofOfWorkLimit);
+		MineGenesis(genesis, bnProofOfWorkLimit);
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256S("0x00000562335393193cf0d47636bd533499833cf243048f059d2bbf21edf821c8"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe4338d238a16b0d02ebcb3853e9894af75ea4b0fcc5efb35e76255d5a3bafc0e"));
+        assert(hashGenesisBlock == uint256S("0x"));
+        assert(genesis.hashMerkleRoot == uint256S("0x"));
 
         // DNS Seeding
-		vSeeds.push_back(CDNSSeedData("167.179.70.156", "167.179.70.156"));
-		vSeeds.push_back(CDNSSeedData("45.76.114.104", "45.76.114.104"));
-		vSeeds.push_back(CDNSSeedData("45.77.215.22", "45.77.215.22"));
-		vSeeds.push_back(CDNSSeedData("45.63.57.42", "45.63.57.42"));
-		vSeeds.push_back(CDNSSeedData("45.32.198.46", "45.32.198.46"));
-		vSeeds.push_back(CDNSSeedData("207.148.11.38", "207.148.11.38"));
+		//vSeeds.push_back(CDNSSeedData("167.179.70.156", "167.179.70.156"));
+		//vSeeds.push_back(CDNSSeedData("45.76.114.104", "45.76.114.104"));
+		//vSeeds.push_back(CDNSSeedData("45.77.215.22", "45.77.215.22"));
+		//vSeeds.push_back(CDNSSeedData("45.63.57.42", "45.63.57.42"));
+		//vSeeds.push_back(CDNSSeedData("45.32.198.46", "45.32.198.46"));
+		//vSeeds.push_back(CDNSSeedData("207.148.11.38", "207.148.11.38"));
 		
-        // BitcoinInvest addresses start with 'B'
+        // GoldMetalCoin addresses start with 'B'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 27);
-        // BitcoinInvest script addresses start with '3'
+        // GoldMetalCoin script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
-        // BitcoinInvest private keys start with 'K'
+        // GoldMetalCoin private keys start with 'K'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 46);
-        // BitcoinInvest BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // GoldMetalCoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // BitcoinInvest BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // GoldMetalCoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // BitcoinInvest BIP44 coin type is '222' (0x800000de)
+        // GoldMetalCoin BIP44 coin type is '222' (0x800000de)
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0xde).convert_to_container<std::vector<unsigned char> >();
 
@@ -235,8 +235,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // BitcoinInvest: 1 day
-        nTargetSpacing = 2 * 60;  // BitcoinInvest: 1 minute
+        nTargetTimespan = 1 * 60; // GoldMetalCoin: 1 day
+        nTargetSpacing = 2 * 60;  // GoldMetalCoin: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -252,17 +252,17 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        // Testnet BitcoinInvest addresses start with 'g'
+        // Testnet GoldMetalCoin addresses start with 'g'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 98);
-        // Testnet BitcoinInvest script addresses start with '5' or '6'
+        // Testnet GoldMetalCoin script addresses start with '5' or '6'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);
         // Testnet private keys start with 'k'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 108);
-        // Testnet BitcoinInvest BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet GoldMetalCoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet BitcoinInvest BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet GoldMetalCoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet BitcoinInvest BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet GoldMetalCoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -308,8 +308,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // BitcoinInvest: 1 day
-        nTargetSpacing = 1 * 60;        // BitcoinInvest: 1 minute
+        nTargetTimespan = 24 * 60 * 60; // GoldMetalCoin: 1 day
+        nTargetSpacing = 1 * 60;        // GoldMetalCoin: 1 minute
         bnProofOfWorkLimit = ~arith_uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 10;

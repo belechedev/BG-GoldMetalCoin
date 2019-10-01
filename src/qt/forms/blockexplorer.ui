@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../bitcoininvest.qrc"/>
+  <include location="../goldmetalcoin.qrc"/>
  </resources>
  <connections/>
 </ui>

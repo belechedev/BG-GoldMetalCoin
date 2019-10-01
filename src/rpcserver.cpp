@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2019 The BitcoinInvest Core developers
+// Copyright (c) 2019 The GoldMetalCoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -265,11 +265,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop BitcoinInvest server.");
+            "\nStop GoldMetalCoin server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "BitcoinInvest server stopping";
+    return "GoldMetalCoin server stopping";
 }
 
 
@@ -351,40 +351,40 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* BitcoinInvest features */
-        {"bitcoininvest", "masternode", &masternode, true, true, false},
-        {"bitcoininvest", "listmasternodes", &listmasternodes, true, true, false},
-        {"bitcoininvest", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"bitcoininvest", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"bitcoininvest", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"bitcoininvest", "masternodedebug", &masternodedebug, true, true, false},
-        {"bitcoininvest", "startmasternode", &startmasternode, true, true, false},
-        {"bitcoininvest", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"bitcoininvest", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"bitcoininvest", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"bitcoininvest", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"bitcoininvest", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"bitcoininvest", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"bitcoininvest", "masternodebroadcast", &masternodebroadcast, true, true, false},
-        {"bitcoininvest", "mnbudget", &mnbudget, true, true, false},
-        {"bitcoininvest", "preparebudget", &preparebudget, true, true, false},
-        {"bitcoininvest", "submitbudget", &submitbudget, true, true, false},
-        {"bitcoininvest", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"bitcoininvest", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"bitcoininvest", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"bitcoininvest", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"bitcoininvest", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"bitcoininvest", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"bitcoininvest", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"bitcoininvest", "checkbudgets", &checkbudgets, true, true, false},
-        {"bitcoininvest", "mnsync", &mnsync, true, true, false},
-        {"bitcoininvest", "spork", &spork, true, true, false},
-        {"bitcoininvest", "preparecommunityproposal", &preparecommunityproposal, true, true, false},
-        {"bitcoininvest", "submitcommunityproposal", &submitcommunityproposal, true, true, false},
-        {"bitcoininvest", "getcommunityinfo", &getcommunityinfo, true, true, false},
-        {"bitcoininvest", "checkcommunityproposals", &checkcommunityproposals, true, true, false},
-        {"bitcoininvest", "getcommunityproposalvotes", &getcommunityproposalvotes, true, true, false},
-        {"bitcoininvest", "mncommunityvote", &mncommunityvote, true, true, false},
+        /* GoldMetalCoin features */
+        {"goldmetalcoin", "masternode", &masternode, true, true, false},
+        {"goldmetalcoin", "listmasternodes", &listmasternodes, true, true, false},
+        {"goldmetalcoin", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"goldmetalcoin", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"goldmetalcoin", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"goldmetalcoin", "masternodedebug", &masternodedebug, true, true, false},
+        {"goldmetalcoin", "startmasternode", &startmasternode, true, true, false},
+        {"goldmetalcoin", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"goldmetalcoin", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"goldmetalcoin", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"goldmetalcoin", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"goldmetalcoin", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"goldmetalcoin", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"goldmetalcoin", "masternodebroadcast", &masternodebroadcast, true, true, false},
+        {"goldmetalcoin", "mnbudget", &mnbudget, true, true, false},
+        {"goldmetalcoin", "preparebudget", &preparebudget, true, true, false},
+        {"goldmetalcoin", "submitbudget", &submitbudget, true, true, false},
+        {"goldmetalcoin", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"goldmetalcoin", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"goldmetalcoin", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"goldmetalcoin", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"goldmetalcoin", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"goldmetalcoin", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"goldmetalcoin", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"goldmetalcoin", "checkbudgets", &checkbudgets, true, true, false},
+        {"goldmetalcoin", "mnsync", &mnsync, true, true, false},
+        {"goldmetalcoin", "spork", &spork, true, true, false},
+        {"goldmetalcoin", "preparecommunityproposal", &preparecommunityproposal, true, true, false},
+        {"goldmetalcoin", "submitcommunityproposal", &submitcommunityproposal, true, true, false},
+        {"goldmetalcoin", "getcommunityinfo", &getcommunityinfo, true, true, false},
+        {"goldmetalcoin", "checkcommunityproposals", &checkcommunityproposals, true, true, false},
+        {"goldmetalcoin", "getcommunityproposalvotes", &getcommunityproposalvotes, true, true, false},
+        {"goldmetalcoin", "mncommunityvote", &mncommunityvote, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -597,7 +597,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> bitcoininvest-cli " + methodname + " " + args + "\n";
+    return "> goldmetalcoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

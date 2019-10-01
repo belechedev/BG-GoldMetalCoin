@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: bitcoininvestd.service
-Upstart: bitcoininvestd.conf
-OpenRC:  bitcoininvestd.openrc
-         bitcoininvestd.openrcconf
-CentOS:  bitcoininvestd.init
-macOS:    io.savebitcoin.bitcoininvestd.plist
+SystemD: goldmetalcoind.service
+Upstart: goldmetalcoind.conf
+OpenRC:  goldmetalcoind.openrc
+         goldmetalcoind.openrcconf
+CentOS:  goldmetalcoind.init
+macOS:    io.savebitcoin.goldmetalcoind.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

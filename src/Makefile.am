@@ -65,15 +65,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bitcoininvestd
+  bin_PROGRAMS += goldmetalcoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += bitcoininvest-cli bitcoininvest-tx
+  bin_PROGRAMS += goldmetalcoin-cli goldmetalcoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# bitcoininvest core #
+# goldmetalcoin core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrman.h \
@@ -177,7 +177,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between bitcoininvestd and bitcoininvest-qt
+# server: shared between goldmetalcoind and goldmetalcoin-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -224,7 +224,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between bitcoininvestd and bitcoininvest-qt, but only linked
+# wallet: shared between goldmetalcoind and goldmetalcoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -286,7 +286,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
-# common: shared between bitcoininvestd, and bitcoininvest-qt and non-server tools
+# common: shared between goldmetalcoind, and goldmetalcoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -345,7 +345,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between bitcoininvest-cli and bitcoininvest-qt
+# cli: shared between goldmetalcoin-cli and goldmetalcoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -355,16 +355,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# bitcoininvestd binary #
-bitcoininvestd_SOURCES = bitcoininvestd.cpp
-bitcoininvestd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-bitcoininvestd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bitcoininvestd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# goldmetalcoind binary #
+goldmetalcoind_SOURCES = goldmetalcoind.cpp
+goldmetalcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+goldmetalcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+goldmetalcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bitcoininvestd_SOURCES += bitcoininvestd-res.rc
+goldmetalcoind_SOURCES += goldmetalcoind-res.rc
 endif
-bitcoininvestd_LDADD = \
+goldmetalcoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -377,45 +377,45 @@ bitcoininvestd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-bitcoininvestd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+goldmetalcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# bitcoininvest-cli binary #
-bitcoininvest_cli_SOURCES = bitcoininvest-cli.cpp
-bitcoininvest_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-bitcoininvest_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bitcoininvest_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# goldmetalcoin-cli binary #
+goldmetalcoin_cli_SOURCES = goldmetalcoin-cli.cpp
+goldmetalcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+goldmetalcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+goldmetalcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bitcoininvestd_SOURCES += bitcoininvestd-res.rc
+goldmetalcoind_SOURCES += goldmetalcoind-res.rc
 endif
 
-bitcoininvest_cli_LDADD = \
+goldmetalcoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-bitcoininvest_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+goldmetalcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# bitcoininvest-tx binary #
-bitcoininvest_tx_SOURCES = bitcoininvest-tx.cpp
-bitcoininvest_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-bitcoininvest_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bitcoininvest_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# goldmetalcoin-tx binary #
+goldmetalcoin_tx_SOURCES = goldmetalcoin-tx.cpp
+goldmetalcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+goldmetalcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+goldmetalcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bitcoininvest_tx_SOURCES += bitcoininvest-tx-res.rc
+goldmetalcoin_tx_SOURCES += goldmetalcoin-tx-res.rc
 endif
 
-bitcoininvest_tx_LDADD = \
+goldmetalcoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-bitcoininvest_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+goldmetalcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #
@@ -464,12 +464,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST =
 
 
-config/bitcoininvest-config.h: config/stamp-h1
+config/goldmetalcoin-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/bitcoininvest-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/goldmetalcoin-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/bitcoininvest-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/bitcoininvest-config.h.in
+$(top_srcdir)/$(subdir)/config/goldmetalcoin-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/goldmetalcoin-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOININVEST_CSPORKDB_H
-#define BITCOININVEST_CSPORKDB_H
+#ifndef GOLDMETALCOIN_CSPORKDB_H
+#define GOLDMETALCOIN_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //BITCOININVEST_CSPORKDB_H
+#endif //GOLDMETALCOIN_CSPORKDB_H

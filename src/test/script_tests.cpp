@@ -18,7 +18,7 @@
 #include "script/bitcoinconsensus.h"
 #endif
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <fstream>
 #include <stdint.h>

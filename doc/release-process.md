@@ -3,8 +3,8 @@ Release Process
 
 Before every release candidate:
 
-* Update translations see [translation_process.md](https://github.com/bitcoininvest-official/bitcoininvest/blob/master/doc/translation_process.md#synchronising-translations).
-* Update manpages, see [gen-manpages.sh](https://github.com/bitcoininvest-official/bitcoininvest/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update translations see [translation_process.md](https://github.com/goldmetalcoin-official/goldmetalcoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update manpages, see [gen-manpages.sh](https://github.com/goldmetalcoin-official/goldmetalcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -25,12 +25,12 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/bitcoininvest/gitian.sigs.git
-    git clone https://github.com/bitcoininvest-official/bitcoininvest-detached-sigs.git
+    git clone https://github.com/goldmetalcoin/gitian.sigs.git
+    git clone https://github.com/goldmetalcoin-official/goldmetalcoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/bitcoininvest-official/bitcoininvest.git
+    git clone https://github.com/goldmetalcoin-official/goldmetalcoin.git
 
-### BitcoinInvest maintainers/release engineers, suggestion for writing release notes
+### GoldMetalCoin maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -51,7 +51,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./bitcoininvest
+    pushd ./goldmetalcoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -85,7 +85,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../bitcoininvest/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../goldmetalcoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -93,55 +93,55 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url bitcoininvest=/path/to/bitcoininvest,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url goldmetalcoin=/path/to/goldmetalcoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign BitcoinInvest Core for Linux, Windows, and OS X:
+### Build and sign GoldMetalCoin Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit bitcoininvest=v${VERSION} ../bitcoininvest/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bitcoininvest/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/bitcoininvest-*.tar.gz build/out/src/bitcoininvest-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit goldmetalcoin=v${VERSION} ../goldmetalcoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../goldmetalcoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/goldmetalcoin-*.tar.gz build/out/src/goldmetalcoin-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit bitcoininvest=v${VERSION} ../bitcoininvest/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bitcoininvest/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/bitcoininvest-*-win-unsigned.tar.gz inputs/bitcoininvest-win-unsigned.tar.gz
-    mv build/out/bitcoininvest-*.zip build/out/bitcoininvest-*.exe ../
+    ./bin/gbuild --memory 3000 --commit goldmetalcoin=v${VERSION} ../goldmetalcoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../goldmetalcoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/goldmetalcoin-*-win-unsigned.tar.gz inputs/goldmetalcoin-win-unsigned.tar.gz
+    mv build/out/goldmetalcoin-*.zip build/out/goldmetalcoin-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit bitcoininvest=v${VERSION} ../bitcoininvest/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bitcoininvest/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/bitcoininvest-*-osx-unsigned.tar.gz inputs/bitcoininvest-osx-unsigned.tar.gz
-    mv build/out/bitcoininvest-*.tar.gz build/out/bitcoininvest-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit goldmetalcoin=v${VERSION} ../goldmetalcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../goldmetalcoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/goldmetalcoin-*-osx-unsigned.tar.gz inputs/goldmetalcoin-osx-unsigned.tar.gz
+    mv build/out/goldmetalcoin-*.tar.gz build/out/goldmetalcoin-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit bitcoininvest=v${VERSION} ../bitcoininvest/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bitcoininvest/contrib/gitian-descriptors/gitian-aarch64.yml
-    mv build/out/bitcoininvest-*.tar.gz build/out/src/bitcoininvest-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit goldmetalcoin=v${VERSION} ../goldmetalcoin/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../goldmetalcoin/contrib/gitian-descriptors/gitian-aarch64.yml
+    mv build/out/goldmetalcoin-*.tar.gz build/out/src/goldmetalcoin-*.tar.gz ../
     popd
 
 Build output expected:
 
-  1. source tarball (`bitcoininvest-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`bitcoininvest-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`bitcoininvest-${VERSION}-win[32|64]-setup-unsigned.exe`, `bitcoininvest-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`bitcoininvest-${VERSION}-osx-unsigned.dmg`, `bitcoininvest-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`goldmetalcoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`goldmetalcoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`goldmetalcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `goldmetalcoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`goldmetalcoin-${VERSION}-osx-unsigned.dmg`, `goldmetalcoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import bitcoininvest/contrib/gitian-keys/*.pgp
+    gpg --import goldmetalcoin/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bitcoininvest/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bitcoininvest/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bitcoininvest/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../bitcoininvest/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../goldmetalcoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../goldmetalcoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../goldmetalcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../goldmetalcoin/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -163,22 +163,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer bitcoininvest-osx-unsigned.tar.gz to osx for signing
-    tar xf bitcoininvest-osx-unsigned.tar.gz
+    transfer goldmetalcoin-osx-unsigned.tar.gz to osx for signing
+    tar xf goldmetalcoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf bitcoininvest-win-unsigned.tar.gz
+    tar xf goldmetalcoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/bitcoininvest-detached-sigs
+    cd ~/goldmetalcoin-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -191,25 +191,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [bitcoininvest-detached-sigs](https://github.com/bitcoininvest-official/bitcoininvest-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [goldmetalcoin-detached-sigs](https://github.com/goldmetalcoin-official/goldmetalcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../bitcoininvest/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bitcoininvest/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bitcoininvest/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/bitcoininvest-osx-signed.dmg ../bitcoininvest-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../goldmetalcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../goldmetalcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../goldmetalcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/goldmetalcoin-osx-signed.dmg ../goldmetalcoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../bitcoininvest/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bitcoininvest/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bitcoininvest/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/bitcoininvest-*win64-setup.exe ../bitcoininvest-${VERSION}-win64-setup.exe
-    mv build/out/bitcoininvest-*win32-setup.exe ../bitcoininvest-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../goldmetalcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../goldmetalcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../goldmetalcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/goldmetalcoin-*win64-setup.exe ../goldmetalcoin-${VERSION}-win64-setup.exe
+    mv build/out/goldmetalcoin-*win32-setup.exe ../goldmetalcoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -231,23 +231,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-bitcoininvest-${VERSION}-aarch64-linux-gnu.tar.gz
-bitcoininvest-${VERSION}-arm-linux-gnueabihf.tar.gz
-bitcoininvest-${VERSION}-i686-pc-linux-gnu.tar.gz
-bitcoininvest-${VERSION}-x86_64-linux-gnu.tar.gz
-bitcoininvest-${VERSION}-osx64.tar.gz
-bitcoininvest-${VERSION}-osx.dmg
-bitcoininvest-${VERSION}.tar.gz
-bitcoininvest-${VERSION}-win32-setup.exe
-bitcoininvest-${VERSION}-win32.zip
-bitcoininvest-${VERSION}-win64-setup.exe
-bitcoininvest-${VERSION}-win64.zip
+goldmetalcoin-${VERSION}-aarch64-linux-gnu.tar.gz
+goldmetalcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+goldmetalcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+goldmetalcoin-${VERSION}-x86_64-linux-gnu.tar.gz
+goldmetalcoin-${VERSION}-osx64.tar.gz
+goldmetalcoin-${VERSION}-osx.dmg
+goldmetalcoin-${VERSION}.tar.gz
+goldmetalcoin-${VERSION}-win32-setup.exe
+goldmetalcoin-${VERSION}-win32.zip
+goldmetalcoin-${VERSION}-win64-setup.exe
+goldmetalcoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the btv.org server*.
+space *do not upload these to the gmc.org server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -263,10 +263,10 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - bitcointalk announcement thread
 
-  - Optionally twitter, reddit /r/BitcoinInvest, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/GoldMetalCoin, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/bitcoininvest-official/bitcoininvest/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/goldmetalcoin-official/goldmetalcoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

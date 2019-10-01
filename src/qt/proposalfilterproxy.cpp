@@ -37,7 +37,7 @@ bool ProposalFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &sou
     int absoluteYesVotes = index.data(ProposalTableModel::AbsoluteYesVotesRole).toInt();
     int percentage = index.data(ProposalTableModel::PercentageRole).toInt();
 
-    CAmount nAmount = amount / BitcoinUnits::factor(BitcoinUnits::BTV);
+    CAmount nAmount = amount / BitcoinUnits::factor(BitcoinUnits::GMC);
     if(proposalStartBlock < startBlock)
        return false;
     if(proposalEndBlock < endBlock)

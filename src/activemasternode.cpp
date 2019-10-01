@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The BitcoinInvest Core developers
+// Copyright (c) 2019-2019 The GoldMetalCoin Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +18,7 @@
 CActiveMasternode activeMasternode;
 
 //
-// Bootup the Masternode, look for a BTV collateral input and register on the network
+// Bootup the Masternode, look for a GMC collateral input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

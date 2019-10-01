@@ -13,7 +13,7 @@ static const int MODEL_UPDATE_DELAY = 1000;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* BitcoinInvest GUI -- Size of icons in status bar */
+/* GoldMetalCoin GUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -54,9 +54,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "BitcoinInvest"
-#define QAPP_ORG_DOMAIN "btv.org"
-#define QAPP_APP_NAME_DEFAULT "BitcoinInvest-Qt"
-#define QAPP_APP_NAME_TESTNET "BitcoinInvest-Qt-testnet"
+#define QAPP_ORG_NAME "GoldMetalCoin"
+#define QAPP_ORG_DOMAIN "gmc.org"
+#define QAPP_APP_NAME_DEFAULT "GoldMetalCoin-Qt"
+#define QAPP_APP_NAME_TESTNET "GoldMetalCoin-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

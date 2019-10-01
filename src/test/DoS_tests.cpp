@@ -15,7 +15,7 @@
 #include "serialize.h"
 #include "util.h"
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <stdint.h>
 

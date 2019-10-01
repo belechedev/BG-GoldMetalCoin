@@ -13,7 +13,7 @@
 #include "script/script_error.h"
 #include "core_io.h"
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <map>
 #include <string>

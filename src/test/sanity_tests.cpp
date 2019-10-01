@@ -5,7 +5,7 @@
 #include "compat/sanity.h"
 #include "key.h"
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <boost/test/unit_test.hpp>
 

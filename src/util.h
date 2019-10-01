@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoininvest-config.h"
+#include "config/goldmetalcoin-config.h"
 #endif
 
 #include "compat.h"
@@ -29,7 +29,7 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/thread/exceptions.hpp>
 
-//BitcoinInvest only features
+//GoldMetalCoin only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -204,7 +204,7 @@ void RenameThread(const char* name);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("bitcoininvest-%s", name);
+    std::string s = strprintf("goldmetalcoin-%s", name);
     RenameThread(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

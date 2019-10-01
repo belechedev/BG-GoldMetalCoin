@@ -8,7 +8,7 @@
 #include "script/standard.h"
 #include "uint256.h"
 
-#include "test/test_bitcoininvest.h"
+#include "test/test_goldmetalcoin.h"
 
 #include <vector>
 
