@@ -53,7 +53,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0,      uint256("0x"));
+    (0,      uint256("0x00000b76dc461f8b98b207a20b4c9edfd904c0d2fc89cea03f59a7dc136490d6"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -140,10 +140,10 @@ public:
          * be spent as it did not originally exist in the database.
          *
          Mined genesis block:
-		 Merkle root: e4338d238a16b0d02ebcb3853e9894af75ea4b0fcc5efb35e76255d5a3bafc0e
-		 Nonce: 297847
+		 Merkle root: 4b64acc97209c5afed38d09a1c2b799dc92757990b61630321b7350d0ba6ca21
+		 Nonce: 1678394
 		 Bits: 504365040
-		 Hash: 00000562335393193cf0d47636bd533499833cf243048f059d2bbf21edf821c8
+		 Hash: 00000b76dc461f8b98b207a20b4c9edfd904c0d2fc89cea03f59a7dc136490d6
 		 POW: 00000ffff0000000000000000000000000000000000000000000000000000000
          */
         const char* pszTimestamp = "The GoldMetalCoin makes your money pay off with low energy cost!";
@@ -159,13 +159,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1569890846;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0;
+        genesis.nNonce = 1678394;
 		
-		MineGenesis(genesis, bnProofOfWorkLimit);
+		//MineGenesis(genesis, bnProofOfWorkLimit);
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+        assert(hashGenesisBlock == uint256S("0x00000b76dc461f8b98b207a20b4c9edfd904c0d2fc89cea03f59a7dc136490d6"));
+        assert(genesis.hashMerkleRoot == uint256S("0x4b64acc97209c5afed38d09a1c2b799dc92757990b61630321b7350d0ba6ca21"));
 
         // DNS Seeding
 		//vSeeds.push_back(CDNSSeedData("167.179.70.156", "167.179.70.156"));
