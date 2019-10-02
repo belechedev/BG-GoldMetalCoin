@@ -176,7 +176,7 @@ public:
 		//vSeeds.push_back(CDNSSeedData("207.148.11.38", "207.148.11.38"));
 		
         // GoldMetalCoin addresses start with 'B'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 36);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
         // GoldMetalCoin script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
         // GoldMetalCoin private keys start with 'K'
