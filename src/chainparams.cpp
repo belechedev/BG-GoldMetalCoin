@@ -127,7 +127,7 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 3 * 60; // GoldMetalCoin: 3 minutes
-        nTargetSpacing = 40 * 60;  // GoldMetalCoin: 40 minutes
+        nTargetSpacing = 3 * 60;  // GoldMetalCoin: 3 minutes
         nMaturity = 20;
         nMasternodeCountDrift = 20;
 
