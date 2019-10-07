@@ -168,12 +168,12 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x4b64acc97209c5afed38d09a1c2b799dc92757990b61630321b7350d0ba6ca21"));
 
         // DNS Seeding
-		//vSeeds.push_back(CDNSSeedData("167.179.70.156", "167.179.70.156"));
-		//vSeeds.push_back(CDNSSeedData("45.76.114.104", "45.76.114.104"));
-		//vSeeds.push_back(CDNSSeedData("45.77.215.22", "45.77.215.22"));
-		//vSeeds.push_back(CDNSSeedData("45.63.57.42", "45.63.57.42"));
-		//vSeeds.push_back(CDNSSeedData("45.32.198.46", "45.32.198.46"));
-		//vSeeds.push_back(CDNSSeedData("207.148.11.38", "207.148.11.38"));
+		vSeeds.push_back(CDNSSeedData("174.138.40.149", "174.138.40.149"));
+		vSeeds.push_back(CDNSSeedData("157.245.140.153", "157.245.140.153"));
+		vSeeds.push_back(CDNSSeedData("67.205.154.62", "67.205.154.62"));
+		vSeeds.push_back(CDNSSeedData("157.230.185.21", "157.230.185.21"));
+		vSeeds.push_back(CDNSSeedData("67.205.158.46", "67.205.158.46"));
+		vSeeds.push_back(CDNSSeedData("67.205.146.94", "67.205.146.94"));
 		
         // GoldMetalCoin addresses start with 'B'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
