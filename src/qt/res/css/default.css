@@ -1150,7 +1150,7 @@ QWidget .QFrame#frame_RecentTransactions .QLabel#labelTransactionsStatus { /* Re
 }
 
 QWidget .QFrame#frame_RecentTransactions QListView { /* Transaction List */
-	font-weight:normal;
+	font-weight:bold;
 	font-size:12px;
 	max-width:369px;
 	margin-top:12px;
