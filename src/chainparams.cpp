@@ -168,12 +168,15 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x4b64acc97209c5afed38d09a1c2b799dc92757990b61630321b7350d0ba6ca21"));
 
         // DNS Seeding
-		vSeeds.push_back(CDNSSeedData("174.138.40.149", "174.138.40.149"));
-		vSeeds.push_back(CDNSSeedData("157.245.140.153", "157.245.140.153"));
-		vSeeds.push_back(CDNSSeedData("67.205.154.62", "67.205.154.62"));
-		vSeeds.push_back(CDNSSeedData("157.230.185.21", "157.230.185.21"));
-		vSeeds.push_back(CDNSSeedData("67.205.158.46", "67.205.158.46"));
-		vSeeds.push_back(CDNSSeedData("67.205.146.94", "67.205.146.94"));
+		vSeeds.push_back(CDNSSeedData("45.76.24.203", "45.76.24.203"));
+		vSeeds.push_back(CDNSSeedData("45.76.22.106", "45.76.22.106"));
+		vSeeds.push_back(CDNSSeedData("144.202.74.151", "144.202.74.151"));
+		vSeeds.push_back(CDNSSeedData("45.32.194.28", "45.32.194.28"));
+		vSeeds.push_back(CDNSSeedData("155.138.243.172", "155.138.243.172"));
+		vSeeds.push_back(CDNSSeedData("45.76.67.230", "45.76.67.230"));
+		vSeeds.push_back(CDNSSeedData("207.246.104.129", "207.246.104.129"));
+		vSeeds.push_back(CDNSSeedData("45.32.68.44", "45.32.68.44"));
+		vSeeds.push_back(CDNSSeedData("108.61.245.229", "108.61.245.229"));
 		
         // GoldMetalCoin addresses start with 'B'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
